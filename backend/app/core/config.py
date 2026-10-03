@@ -39,6 +39,29 @@ class Settings(BaseSettings):
                 return database_url.replace(scheme, "postgresql+psycopg://", 1)
         return database_url
 
+    # PayPal (Subscriptions, Orders, Marketplaces). Secrets come from the
+    # environment only and are never sent to the browser.
+    PAYPAL_ENV: Literal["sandbox", "live"] = "sandbox"
+    PAYPAL_CLIENT_ID: str | None = None
+    PAYPAL_CLIENT_SECRET: str | None = None
+    PAYPAL_WEBHOOK_ID: str | None = None
+    PAYPAL_PARTNER_MERCHANT_ID: str | None = None
+    PAYPAL_PARTNER_BN_CODE: str | None = None
+    # Verify against current PayPal documentation before changing.
+    PAYPAL_MAX_DISBURSEMENT_DAYS: int = 90
+    PAYPAL_RELEASE_WARNING_DAYS: int = 10
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def paypal_api_base(self) -> str:
+        if self.PAYPAL_ENV == "live":
+            return "https://api-m.paypal.com"
+        return "https://api-m.sandbox.paypal.com"
+
+    @property
+    def paypal_configured(self) -> bool:
+        return bool(self.PAYPAL_CLIENT_ID and self.PAYPAL_CLIENT_SECRET)
+
     SMTP_TLS: bool = True
     SMTP_SSL: bool = False
     SMTP_PORT: int = 587
