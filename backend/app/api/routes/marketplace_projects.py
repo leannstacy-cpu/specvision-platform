@@ -159,7 +159,10 @@ def browse_projects(
     if category:
         stmt = stmt.where(Project.category == category)
     if service_area:
-        stmt = stmt.where(col(Project.service_area).ilike(f"%{service_area}%"))
+        escaped = (
+            service_area.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+        )
+        stmt = stmt.where(col(Project.service_area).ilike(f"%{escaped}%", escape="\\"))
     if project_type:
         stmt = stmt.where(Project.project_type == project_type)
     if tier == Tier.PROFESSIONAL:

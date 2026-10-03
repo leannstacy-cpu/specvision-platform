@@ -52,6 +52,8 @@ class PayPalGateway(Protocol):
 
 
 def money(cents: int) -> str:
+    if cents < 0:
+        raise ValueError("amount must not be negative")
     return f"{cents // 100}.{cents % 100:02d}"
 
 
