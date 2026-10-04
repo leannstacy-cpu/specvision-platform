@@ -2,7 +2,7 @@
 
 import { type Client, type Options as Options2, type TDataShape, urlSearchParamsBodySerializer } from './client';
 import { client } from './client.gen';
-import type { itemsCreateItemData, itemsCreateItemErrors, itemsCreateItemResponses, itemsDeleteItemData, itemsDeleteItemErrors, itemsDeleteItemResponses, itemsReadItemData, itemsReadItemErrors, itemsReadItemResponses, itemsReadItemsData, itemsReadItemsErrors, itemsReadItemsResponses, itemsUpdateItemData, itemsUpdateItemErrors, itemsUpdateItemResponses, loginLoginAccessTokenData, loginLoginAccessTokenErrors, loginLoginAccessTokenResponses, loginRecoverPasswordData, loginRecoverPasswordErrors, loginRecoverPasswordHtmlContentData, loginRecoverPasswordHtmlContentErrors, loginRecoverPasswordHtmlContentResponses, loginRecoverPasswordResponses, loginResetPasswordData, loginResetPasswordErrors, loginResetPasswordResponses, loginTestTokenData, loginTestTokenResponses, privateCreateUserData, privateCreateUserErrors, privateCreateUserResponses, usersCreateUserData, usersCreateUserErrors, usersCreateUserResponses, usersDeleteUserData, usersDeleteUserErrors, usersDeleteUserMeData, usersDeleteUserMeResponses, usersDeleteUserResponses, usersReadUserByIdData, usersReadUserByIdErrors, usersReadUserByIdResponses, usersReadUserMeData, usersReadUserMeResponses, usersReadUsersData, usersReadUsersErrors, usersReadUsersResponses, usersRegisterUserData, usersRegisterUserErrors, usersRegisterUserResponses, usersUpdatePasswordMeData, usersUpdatePasswordMeErrors, usersUpdatePasswordMeResponses, usersUpdateUserData, usersUpdateUserErrors, usersUpdateUserMeData, usersUpdateUserMeErrors, usersUpdateUserMeResponses, usersUpdateUserResponses, utilsHealthCheckData, utilsHealthCheckResponses, utilsTestEmailData, utilsTestEmailErrors, utilsTestEmailResponses } from './types.gen';
+import type { itemsCreateItemData, itemsCreateItemErrors, itemsCreateItemResponses, itemsDeleteItemData, itemsDeleteItemErrors, itemsDeleteItemResponses, itemsReadItemData, itemsReadItemErrors, itemsReadItemResponses, itemsReadItemsData, itemsReadItemsErrors, itemsReadItemsResponses, itemsUpdateItemData, itemsUpdateItemErrors, itemsUpdateItemResponses, loginLoginAccessTokenData, loginLoginAccessTokenErrors, loginLoginAccessTokenResponses, loginRecoverPasswordData, loginRecoverPasswordErrors, loginRecoverPasswordHtmlContentData, loginRecoverPasswordHtmlContentErrors, loginRecoverPasswordHtmlContentResponses, loginRecoverPasswordResponses, loginResetPasswordData, loginResetPasswordErrors, loginResetPasswordResponses, loginTestTokenData, loginTestTokenResponses, marketplaceAdminAllPaymentsData, marketplaceAdminAllPaymentsErrors, marketplaceAdminAllPaymentsResponses, marketplaceAdminAuditLogsData, marketplaceAdminAuditLogsErrors, marketplaceAdminAuditLogsResponses, marketplaceAdminCreatePlanData, marketplaceAdminCreatePlanErrors, marketplaceAdminCreatePlanResponses, marketplaceAdminFeatureFlagsData, marketplaceAdminFeatureFlagsResponses, marketplaceAdminRefundPaymentData, marketplaceAdminRefundPaymentErrors, marketplaceAdminRefundPaymentResponses, marketplaceAdminReleaseQueueData, marketplaceAdminReleaseQueueResponses, marketplaceAdminRemoteSupportConfigData, marketplaceAdminRemoteSupportConfigResponses, marketplaceAdminReprocessEventData, marketplaceAdminReprocessEventErrors, marketplaceAdminReprocessEventResponses, marketplaceAdminSetFeatureFlagData, marketplaceAdminSetFeatureFlagErrors, marketplaceAdminSetFeatureFlagResponses, marketplaceAdminSetMarketplaceFeeData, marketplaceAdminSetMarketplaceFeeErrors, marketplaceAdminSetMarketplaceFeeResponses, marketplaceAdminUpdateModifierData, marketplaceAdminUpdateModifierErrors, marketplaceAdminUpdateModifierResponses, marketplaceAdminUpdatePlanData, marketplaceAdminUpdatePlanErrors, marketplaceAdminUpdatePlanResponses, marketplaceAdminWebhookEventsData, marketplaceAdminWebhookEventsErrors, marketplaceAdminWebhookEventsResponses, marketplaceBillingBillingSummaryData, marketplaceBillingBillingSummaryResponses, marketplaceBillingCancelSubscriptionData, marketplaceBillingCancelSubscriptionErrors, marketplaceBillingCancelSubscriptionResponses, marketplaceBillingCreateProfileData, marketplaceBillingCreateProfileErrors, marketplaceBillingCreateProfileResponses, marketplaceBillingListModifiersData, marketplaceBillingListModifiersResponses, marketplaceBillingListPlansData, marketplaceBillingListPlansResponses, marketplaceBillingQuoteModifiersData, marketplaceBillingQuoteModifiersErrors, marketplaceBillingQuoteModifiersResponses, marketplaceBillingReadMyProfileData, marketplaceBillingReadMyProfileResponses, marketplaceBillingStartSubscriptionData, marketplaceBillingStartSubscriptionErrors, marketplaceBillingStartSubscriptionResponses, marketplacePaymentsApproveData, marketplacePaymentsApproveErrors, marketplacePaymentsApproveResponses, marketplacePaymentsCreateMilestoneData, marketplacePaymentsCreateMilestoneErrors, marketplacePaymentsCreateMilestoneResponses, marketplacePaymentsFundData, marketplacePaymentsFundErrors, marketplacePaymentsFundResponses, marketplacePaymentsProjectPaymentsData, marketplacePaymentsProjectPaymentsErrors, marketplacePaymentsProjectPaymentsResponses, marketplacePaymentsSellerOnboardData, marketplacePaymentsSellerOnboardErrors, marketplacePaymentsSellerStatusData, marketplacePaymentsSellerStatusResponses, marketplaceProjectsAwardProjectData, marketplaceProjectsAwardProjectErrors, marketplaceProjectsAwardProjectResponses, marketplaceProjectsBrowseProjectsData, marketplaceProjectsBrowseProjectsErrors, marketplaceProjectsBrowseProjectsResponses, marketplaceProjectsCreateProjectData, marketplaceProjectsCreateProjectErrors, marketplaceProjectsCreateProjectResponses, marketplaceProjectsLeadUnlockStatusData, marketplaceProjectsLeadUnlockStatusErrors, marketplaceProjectsLeadUnlockStatusResponses, marketplaceProjectsListBidsData, marketplaceProjectsListBidsErrors, marketplaceProjectsListBidsResponses, marketplaceProjectsMyProjectsData, marketplaceProjectsMyProjectsResponses, marketplaceProjectsReadProjectData, marketplaceProjectsReadProjectErrors, marketplaceProjectsReadProjectResponses, marketplaceProjectsShortlistBidData, marketplaceProjectsShortlistBidErrors, marketplaceProjectsShortlistBidResponses, marketplaceProjectsStartLeadUnlockData, marketplaceProjectsStartLeadUnlockErrors, marketplaceProjectsStartLeadUnlockResponses, marketplaceProjectsSubmitBidData, marketplaceProjectsSubmitBidErrors, marketplaceProjectsSubmitBidResponses, privateCreateUserData, privateCreateUserErrors, privateCreateUserResponses, usersCreateUserData, usersCreateUserErrors, usersCreateUserResponses, usersDeleteUserData, usersDeleteUserErrors, usersDeleteUserMeData, usersDeleteUserMeResponses, usersDeleteUserResponses, usersReadUserByIdData, usersReadUserByIdErrors, usersReadUserByIdResponses, usersReadUserMeData, usersReadUserMeResponses, usersReadUsersData, usersReadUsersErrors, usersReadUsersResponses, usersRegisterUserData, usersRegisterUserErrors, usersRegisterUserResponses, usersUpdatePasswordMeData, usersUpdatePasswordMeErrors, usersUpdatePasswordMeResponses, usersUpdateUserData, usersUpdateUserErrors, usersUpdateUserMeData, usersUpdateUserMeErrors, usersUpdateUserMeResponses, usersUpdateUserResponses, utilsHealthCheckData, utilsHealthCheckResponses, utilsTestEmailData, utilsTestEmailErrors, utilsTestEmailResponses, webhooksPaypalWebhookData, webhooksPaypalWebhookResponses } from './types.gen';
 
 export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
@@ -360,6 +360,540 @@ export class ItemsService {
                 'Content-Type': 'application/json',
                 ...options.headers
             }
+        });
+    }
+}
+
+export class MarketplaceBillingService {
+    /**
+     * List Plans
+     *
+     * Public membership comparison data (no PayPal identifiers exposed).
+     */
+    public static billingListPlans<ThrowOnError extends boolean = true>(options?: Options<marketplaceBillingListPlansData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceBillingListPlansResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            url: '/api/v1/plans',
+            ...options
+        });
+    }
+    
+    /**
+     * List Modifiers
+     */
+    public static billingListModifiers<ThrowOnError extends boolean = true>(options?: Options<marketplaceBillingListModifiersData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceBillingListModifiersResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            url: '/api/v1/modifiers',
+            ...options
+        });
+    }
+    
+    /**
+     * Quote Modifiers
+     */
+    public static billingQuoteModifiers<ThrowOnError extends boolean = true>(options: Options<marketplaceBillingQuoteModifiersData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceBillingQuoteModifiersResponses, marketplaceBillingQuoteModifiersErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/modifiers/quote',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Create Profile
+     */
+    public static billingCreateProfile<ThrowOnError extends boolean = true>(options: Options<marketplaceBillingCreateProfileData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceBillingCreateProfileResponses, marketplaceBillingCreateProfileErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/profile',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Read My Profile
+     */
+    public static billingReadMyProfile<ThrowOnError extends boolean = true>(options?: Options<marketplaceBillingReadMyProfileData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceBillingReadMyProfileResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/profile/me',
+            ...options
+        });
+    }
+    
+    /**
+     * Start Subscription
+     *
+     * Create a PayPal subscription. Benefits only start after the webhook.
+     */
+    public static billingStartSubscription<ThrowOnError extends boolean = true>(options: Options<marketplaceBillingStartSubscriptionData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceBillingStartSubscriptionResponses, marketplaceBillingStartSubscriptionErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/subscriptions/checkout',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Billing Summary
+     */
+    public static billingBillingSummary<ThrowOnError extends boolean = true>(options?: Options<marketplaceBillingBillingSummaryData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceBillingBillingSummaryResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/subscriptions/me',
+            ...options
+        });
+    }
+    
+    /**
+     * Cancel Subscription
+     *
+     * Ask PayPal to cancel; local status changes on PayPal's webhook.
+     */
+    public static billingCancelSubscription<ThrowOnError extends boolean = true>(options: Options<marketplaceBillingCancelSubscriptionData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceBillingCancelSubscriptionResponses, marketplaceBillingCancelSubscriptionErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/subscriptions/{subscription_id}/cancel',
+            ...options
+        });
+    }
+}
+
+export class MarketplaceProjectsService {
+    /**
+     * Browse Projects
+     *
+     * Sanitized listings for professionals. Never includes protected fields.
+     */
+    public static projectsBrowseProjects<ThrowOnError extends boolean = true>(options?: Options<marketplaceProjectsBrowseProjectsData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceProjectsBrowseProjectsResponses, marketplaceProjectsBrowseProjectsErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/',
+            ...options
+        });
+    }
+    
+    /**
+     * Create Project
+     */
+    public static projectsCreateProject<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsCreateProjectData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceProjectsCreateProjectResponses, marketplaceProjectsCreateProjectErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * My Projects
+     */
+    public static projectsMyProjects<ThrowOnError extends boolean = true>(options?: Options<marketplaceProjectsMyProjectsData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceProjectsMyProjectsResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/mine',
+            ...options
+        });
+    }
+    
+    /**
+     * Read Project
+     */
+    public static projectsReadProject<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsReadProjectData, ThrowOnError>) {
+        return (options.client ?? client).get<marketplaceProjectsReadProjectResponses, marketplaceProjectsReadProjectErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}',
+            ...options
+        });
+    }
+    
+    /**
+     * List Bids
+     *
+     * Owners compare bids; a professional only ever sees their own bid.
+     */
+    public static projectsListBids<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsListBidsData, ThrowOnError>) {
+        return (options.client ?? client).get<marketplaceProjectsListBidsResponses, marketplaceProjectsListBidsErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/bids',
+            ...options
+        });
+    }
+    
+    /**
+     * Submit Bid
+     *
+     * Create or revise a preliminary bid (no protected data is returned).
+     */
+    public static projectsSubmitBid<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsSubmitBidData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceProjectsSubmitBidResponses, marketplaceProjectsSubmitBidErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/bids',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Shortlist Bid
+     */
+    public static projectsShortlistBid<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsShortlistBidData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceProjectsShortlistBidResponses, marketplaceProjectsShortlistBidErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/bids/{bid_id}/shortlist',
+            ...options
+        });
+    }
+    
+    /**
+     * Award Project
+     */
+    public static projectsAwardProject<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsAwardProjectData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceProjectsAwardProjectResponses, marketplaceProjectsAwardProjectErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/award/{bid_id}',
+            ...options
+        });
+    }
+    
+    /**
+     * Lead Unlock Status
+     */
+    public static projectsLeadUnlockStatus<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsLeadUnlockStatusData, ThrowOnError>) {
+        return (options.client ?? client).get<marketplaceProjectsLeadUnlockStatusResponses, marketplaceProjectsLeadUnlockStatusErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/unlock',
+            ...options
+        });
+    }
+    
+    /**
+     * Start Lead Unlock
+     *
+     * Create the PayPal order for the lead fee. Access starts only after the
+     * verified capture webhook; the fee is always taken from the member's plan.
+     */
+    public static projectsStartLeadUnlock<ThrowOnError extends boolean = true>(options: Options<marketplaceProjectsStartLeadUnlockData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceProjectsStartLeadUnlockResponses, marketplaceProjectsStartLeadUnlockErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/unlock',
+            ...options
+        });
+    }
+}
+
+export class MarketplacePaymentsService {
+    /**
+     * Create Milestone
+     */
+    public static paymentsCreateMilestone<ThrowOnError extends boolean = true>(options: Options<marketplacePaymentsCreateMilestoneData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplacePaymentsCreateMilestoneResponses, marketplacePaymentsCreateMilestoneErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/milestones',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Fund
+     */
+    public static paymentsFund<ThrowOnError extends boolean = true>(options: Options<marketplacePaymentsFundData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplacePaymentsFundResponses, marketplacePaymentsFundErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/milestones/{milestone_id}/fund',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Approve
+     */
+    public static paymentsApprove<ThrowOnError extends boolean = true>(options: Options<marketplacePaymentsApproveData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplacePaymentsApproveResponses, marketplacePaymentsApproveErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/milestones/{milestone_id}/approve',
+            ...options
+        });
+    }
+    
+    /**
+     * Seller Status
+     */
+    public static paymentsSellerStatus<ThrowOnError extends boolean = true>(options?: Options<marketplacePaymentsSellerStatusData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplacePaymentsSellerStatusResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/seller/status',
+            ...options
+        });
+    }
+    
+    /**
+     * Seller Onboard
+     *
+     * PayPal partner referral link creation is not implemented yet.
+     */
+    public static paymentsSellerOnboard<ThrowOnError extends boolean = true>(options?: Options<marketplacePaymentsSellerOnboardData, ThrowOnError>) {
+        return (options?.client ?? client).post<unknown, marketplacePaymentsSellerOnboardErrors, ThrowOnError>({
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/seller/onboard',
+            ...options
+        });
+    }
+    
+    /**
+     * Project Payments
+     */
+    public static paymentsProjectPayments<ThrowOnError extends boolean = true>(options: Options<marketplacePaymentsProjectPaymentsData, ThrowOnError>) {
+        return (options.client ?? client).get<marketplacePaymentsProjectPaymentsResponses, marketplacePaymentsProjectPaymentsErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/projects/{project_id}/payments',
+            ...options
+        });
+    }
+}
+
+export class MarketplaceAdminService {
+    /**
+     * Webhook Events
+     */
+    public static adminWebhookEvents<ThrowOnError extends boolean = true>(options?: Options<marketplaceAdminWebhookEventsData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceAdminWebhookEventsResponses, marketplaceAdminWebhookEventsErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/webhook-events',
+            ...options
+        });
+    }
+    
+    /**
+     * Reprocess Event
+     */
+    public static adminReprocessEvent<ThrowOnError extends boolean = true>(options: Options<marketplaceAdminReprocessEventData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceAdminReprocessEventResponses, marketplaceAdminReprocessEventErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/webhook-events/{event_id}/reprocess',
+            ...options
+        });
+    }
+    
+    /**
+     * Release Queue
+     *
+     * Held payments nearing their PayPal release deadline.
+     */
+    public static adminReleaseQueue<ThrowOnError extends boolean = true>(options?: Options<marketplaceAdminReleaseQueueData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceAdminReleaseQueueResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/payments/release-queue',
+            ...options
+        });
+    }
+    
+    /**
+     * All Payments
+     */
+    public static adminAllPayments<ThrowOnError extends boolean = true>(options?: Options<marketplaceAdminAllPaymentsData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceAdminAllPaymentsResponses, marketplaceAdminAllPaymentsErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/payments',
+            ...options
+        });
+    }
+    
+    /**
+     * Refund Payment
+     */
+    public static adminRefundPayment<ThrowOnError extends boolean = true>(options: Options<marketplaceAdminRefundPaymentData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceAdminRefundPaymentResponses, marketplaceAdminRefundPaymentErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/payments/{payment_id}/refund',
+            ...options
+        });
+    }
+    
+    /**
+     * Feature Flags
+     */
+    public static adminFeatureFlags<ThrowOnError extends boolean = true>(options?: Options<marketplaceAdminFeatureFlagsData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceAdminFeatureFlagsResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/feature-flags',
+            ...options
+        });
+    }
+    
+    /**
+     * Set Feature Flag
+     */
+    public static adminSetFeatureFlag<ThrowOnError extends boolean = true>(options: Options<marketplaceAdminSetFeatureFlagData, ThrowOnError>) {
+        return (options.client ?? client).put<marketplaceAdminSetFeatureFlagResponses, marketplaceAdminSetFeatureFlagErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/feature-flags/{key}',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Update Plan
+     */
+    public static adminUpdatePlan<ThrowOnError extends boolean = true>(options: Options<marketplaceAdminUpdatePlanData, ThrowOnError>) {
+        return (options.client ?? client).put<marketplaceAdminUpdatePlanResponses, marketplaceAdminUpdatePlanErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/plans/{code}',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Create Plan
+     *
+     * Additional plans exist only when an administrator explicitly adds them.
+     */
+    public static adminCreatePlan<ThrowOnError extends boolean = true>(options: Options<marketplaceAdminCreatePlanData, ThrowOnError>) {
+        return (options.client ?? client).post<marketplaceAdminCreatePlanResponses, marketplaceAdminCreatePlanErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/plans',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Update Modifier
+     */
+    public static adminUpdateModifier<ThrowOnError extends boolean = true>(options: Options<marketplaceAdminUpdateModifierData, ThrowOnError>) {
+        return (options.client ?? client).put<marketplaceAdminUpdateModifierResponses, marketplaceAdminUpdateModifierErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/modifiers/{code}',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Set Marketplace Fee
+     */
+    public static adminSetMarketplaceFee<ThrowOnError extends boolean = true>(options: Options<marketplaceAdminSetMarketplaceFeeData, ThrowOnError>) {
+        return (options.client ?? client).put<marketplaceAdminSetMarketplaceFeeResponses, marketplaceAdminSetMarketplaceFeeErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/settings/marketplace-fee',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+    }
+    
+    /**
+     * Audit Logs
+     */
+    public static adminAuditLogs<ThrowOnError extends boolean = true>(options?: Options<marketplaceAdminAuditLogsData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceAdminAuditLogsResponses, marketplaceAdminAuditLogsErrors, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/audit-logs',
+            ...options
+        });
+    }
+    
+    /**
+     * Remote Support Config
+     */
+    public static adminRemoteSupportConfig<ThrowOnError extends boolean = true>(options?: Options<marketplaceAdminRemoteSupportConfigData, ThrowOnError>) {
+        return (options?.client ?? client).get<marketplaceAdminRemoteSupportConfigResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            security: [{ scheme: 'bearer', type: 'http' }],
+            url: '/api/v1/admin/remote-support',
+            ...options
+        });
+    }
+}
+
+export class WebhooksService {
+    /**
+     * Paypal Webhook
+     *
+     * Receive a PayPal event. Unsigned or unverifiable requests are rejected
+     * before anything is stored or processed.
+     */
+    public static paypalWebhook<ThrowOnError extends boolean = true>(options?: Options<webhooksPaypalWebhookData, ThrowOnError>) {
+        return (options?.client ?? client).post<webhooksPaypalWebhookResponses, unknown, ThrowOnError>({
+            responseType: 'json',
+            url: '/api/v1/webhooks/paypal',
+            ...options
         });
     }
 }

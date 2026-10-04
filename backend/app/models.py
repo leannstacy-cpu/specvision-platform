@@ -131,3 +131,7 @@ class TokenPayload(SQLModel):
 class NewPassword(SQLModel):
     token: str
     new_password: str = Field(min_length=8, max_length=128)
+
+
+# Register marketplace tables on the shared SQLModel metadata (used by Alembic).
+from app.marketplace import models as _marketplace_models  # noqa: E402,F401

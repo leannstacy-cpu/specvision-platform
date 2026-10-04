@@ -6,11 +6,13 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jwt.exceptions import InvalidTokenError
 from pydantic import ValidationError
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 from app.core import security
 from app.core.config import settings
 from app.core.db import engine
+from app.marketplace.models import Profile
+from app.marketplace.paypal import PayPalError, PayPalGateway, get_paypal_gateway
 from app.models import TokenPayload, User
 
 reusable_oauth2 = OAuth2PasswordBearer(
@@ -55,3 +57,26 @@ def get_current_active_superuser(current_user: CurrentUser) -> User:
             status_code=403, detail="The user doesn't have enough privileges"
         )
     return current_user
+
+
+def get_gateway() -> PayPalGateway:
+    """PayPal gateway dependency (overridable); 503 when not configured."""
+    try:
+        return get_paypal_gateway()
+    except PayPalError:
+        raise HTTPException(status_code=503, detail="Payments are not configured")
+
+
+GatewayDep = Annotated[PayPalGateway, Depends(get_gateway)]
+
+
+def get_current_profile(session: SessionDep, current_user: CurrentUser) -> Profile:
+    profile = session.exec(
+        select(Profile).where(Profile.user_id == current_user.id)
+    ).first()
+    if profile is None:
+        raise HTTPException(status_code=403, detail="Create a profile first")
+    return profile
+
+
+CurrentProfile = Annotated[Profile, Depends(get_current_profile)]
