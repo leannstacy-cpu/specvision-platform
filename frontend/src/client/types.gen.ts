@@ -5,6 +5,121 @@ export type ClientOptions = {
 };
 
 /**
+ * AuditLogPublic
+ */
+export type AuditLogPublic = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Actor Id
+     */
+    actor_id: string | null;
+    /**
+     * Action
+     */
+    action: string;
+    /**
+     * Entity Type
+     */
+    entity_type: string;
+    /**
+     * Entity Id
+     */
+    entity_id: string | null;
+    /**
+     * Detail
+     */
+    detail: {
+        [key: string]: unknown;
+    };
+    /**
+     * Created At
+     */
+    created_at: unknown;
+};
+
+/**
+ * BidPublic
+ */
+export type BidPublic = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Project Id
+     */
+    project_id: string;
+    /**
+     * Professional Id
+     */
+    professional_id: string;
+    /**
+     * Professional Name
+     */
+    professional_name?: string | null;
+    /**
+     * Professional Category
+     */
+    professional_category?: string | null;
+    /**
+     * Amount Cents
+     */
+    amount_cents: number;
+    /**
+     * Timeline Days
+     */
+    timeline_days: number;
+    /**
+     * Message
+     */
+    message: string;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Revision
+     */
+    revision: number;
+};
+
+/**
+ * BidWrite
+ */
+export type BidWrite = {
+    /**
+     * Amount Cents
+     */
+    amount_cents: number;
+    /**
+     * Timeline Days
+     */
+    timeline_days: number;
+    /**
+     * Message
+     */
+    message: string;
+};
+
+/**
+ * BillingSummary
+ */
+export type BillingSummary = {
+    current: SubscriptionPublic | null;
+    /**
+     * Subscriptions
+     */
+    subscriptions: Array<SubscriptionPublic>;
+    /**
+     * Payments
+     */
+    payments: Array<PaymentHistoryItem>;
+};
+
+/**
  * Body_login-login_access_token
  */
 export type Body_login_login_access_token = {
@@ -35,6 +150,105 @@ export type Body_login_login_access_token = {
 };
 
 /**
+ * Category
+ */
+export type Category = 'audiovisual' | 'it';
+
+/**
+ * CheckoutRequest
+ */
+export type CheckoutRequest = {
+    /**
+     * Plan Code
+     */
+    plan_code: string;
+};
+
+/**
+ * CheckoutResponse
+ */
+export type CheckoutResponse = {
+    /**
+     * Subscription Id
+     */
+    subscription_id: string;
+    /**
+     * Approval Url
+     */
+    approval_url: string;
+};
+
+/**
+ * FeeUpdate
+ */
+export type FeeUpdate = {
+    /**
+     * Basis Points
+     */
+    basis_points: number;
+};
+
+/**
+ * FlagPublic
+ */
+export type FlagPublic = {
+    /**
+     * Key
+     */
+    key: string;
+    /**
+     * Enabled
+     */
+    enabled: boolean;
+    /**
+     * Description
+     */
+    description: string;
+};
+
+/**
+ * FlagUpdate
+ */
+export type FlagUpdate = {
+    /**
+     * Enabled
+     */
+    enabled: boolean;
+};
+
+/**
+ * FundRequest
+ */
+export type FundRequest = {
+    /**
+     * Accept Direct Payment
+     */
+    accept_direct_payment?: boolean;
+};
+
+/**
+ * FundResponse
+ */
+export type FundResponse = {
+    /**
+     * Payment Id
+     */
+    payment_id: string;
+    /**
+     * Paypal Order Id
+     */
+    paypal_order_id: string;
+    /**
+     * Disbursement Mode
+     */
+    disbursement_mode: string;
+    /**
+     * Notice
+     */
+    notice: string;
+};
+
+/**
  * HTTPValidationError
  */
 export type HTTPValidationError = {
@@ -43,6 +257,11 @@ export type HTTPValidationError = {
      */
     detail?: Array<ValidationError>;
 };
+
+/**
+ * Interval
+ */
+export type Interval = 'month' | 'year';
 
 /**
  * ItemCreate
@@ -123,6 +342,100 @@ export type Message = {
 };
 
 /**
+ * MilestoneCreate
+ */
+export type MilestoneCreate = {
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Amount Cents
+     */
+    amount_cents: number;
+};
+
+/**
+ * MilestonePublic
+ */
+export type MilestonePublic = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Project Id
+     */
+    project_id: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Amount Cents
+     */
+    amount_cents: number;
+    /**
+     * Status
+     */
+    status: string;
+};
+
+/**
+ * ModifierAdmin
+ */
+export type ModifierAdmin = {
+    /**
+     * Code
+     */
+    code: string;
+    /**
+     * Label
+     */
+    label: string;
+    /**
+     * Price Cents
+     */
+    price_cents: number;
+    /**
+     * Is Active
+     */
+    is_active: boolean;
+};
+
+/**
+ * ModifierPublic
+ */
+export type ModifierPublic = {
+    /**
+     * Code
+     */
+    code: string;
+    /**
+     * Label
+     */
+    label: string;
+    /**
+     * Price Cents
+     */
+    price_cents: number;
+};
+
+/**
+ * ModifierUpdate
+ */
+export type ModifierUpdate = {
+    /**
+     * Price Cents
+     */
+    price_cents?: number | null;
+    /**
+     * Is Active
+     */
+    is_active?: boolean | null;
+};
+
+/**
  * NewPassword
  */
 export type NewPassword = {
@@ -134,6 +447,172 @@ export type NewPassword = {
      * New Password
      */
     new_password: string;
+};
+
+/**
+ * PaymentAdmin
+ */
+export type PaymentAdmin = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Project Id
+     */
+    project_id: string;
+    /**
+     * Amount Cents
+     */
+    amount_cents: number;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Disbursement Mode
+     */
+    disbursement_mode: string;
+    /**
+     * Release Deadline
+     */
+    release_deadline: unknown;
+};
+
+/**
+ * PaymentHistoryItem
+ */
+export type PaymentHistoryItem = {
+    /**
+     * Amount Cents
+     */
+    amount_cents: number;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Occurred At
+     */
+    occurred_at: unknown;
+};
+
+/**
+ * PaymentPublic
+ */
+export type PaymentPublic = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Project Id
+     */
+    project_id: string;
+    /**
+     * Milestone Id
+     */
+    milestone_id: string | null;
+    /**
+     * Amount Cents
+     */
+    amount_cents: number;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Disbursement Mode
+     */
+    disbursement_mode: string;
+};
+
+/**
+ * PlanCreate
+ */
+export type PlanCreate = {
+    /**
+     * Code
+     */
+    code: string;
+    /**
+     * Name
+     */
+    name: string;
+    tier: Tier;
+    interval: Interval;
+    /**
+     * Price Cents
+     */
+    price_cents: number;
+    /**
+     * Lead Fee Cents
+     */
+    lead_fee_cents?: number | null;
+    /**
+     * Trial Days
+     */
+    trial_days?: number;
+};
+
+/**
+ * PlanPublic
+ */
+export type PlanPublic = {
+    /**
+     * Code
+     */
+    code: string;
+    /**
+     * Name
+     */
+    name: string;
+    /**
+     * Tier
+     */
+    tier: string;
+    /**
+     * Interval
+     */
+    interval: string;
+    /**
+     * Price Cents
+     */
+    price_cents: number;
+    /**
+     * Trial Days
+     */
+    trial_days: number;
+    /**
+     * Lead Fee Cents
+     */
+    lead_fee_cents: number | null;
+    /**
+     * Purchasable
+     */
+    purchasable: boolean;
+};
+
+/**
+ * PlanUpdate
+ */
+export type PlanUpdate = {
+    /**
+     * Paypal Plan Id
+     */
+    paypal_plan_id?: string | null;
+    /**
+     * Paypal Product Id
+     */
+    paypal_product_id?: string | null;
+    /**
+     * Is Active
+     */
+    is_active?: boolean | null;
+    /**
+     * Lead Fee Cents
+     */
+    lead_fee_cents?: number | null;
 };
 
 /**
@@ -159,6 +638,419 @@ export type PrivateUserCreate = {
 };
 
 /**
+ * ProfileCreate
+ */
+export type ProfileCreate = {
+    role?: ProfileRole;
+    /**
+     * Display Name
+     */
+    display_name: string;
+    /**
+     * Is Company
+     */
+    is_company?: boolean;
+    /**
+     * Company Name
+     */
+    company_name?: string | null;
+    category?: Category | null;
+};
+
+/**
+ * ProfilePublic
+ */
+export type ProfilePublic = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Role
+     */
+    role: string;
+    /**
+     * Display Name
+     */
+    display_name: string;
+    /**
+     * Is Company
+     */
+    is_company: boolean;
+    /**
+     * Company Name
+     */
+    company_name: string | null;
+    /**
+     * Category
+     */
+    category: string | null;
+};
+
+/**
+ * ProfileRole
+ */
+export type ProfileRole = 'client' | 'professional' | 'support';
+
+/**
+ * ProjectCreate
+ */
+export type ProjectCreate = {
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Description
+     */
+    description: string;
+    category: Category;
+    /**
+     * Project Type
+     */
+    project_type: string;
+    /**
+     * Service Area
+     */
+    service_area: string;
+    /**
+     * Budget Min Cents
+     */
+    budget_min_cents?: number | null;
+    /**
+     * Budget Max Cents
+     */
+    budget_max_cents?: number | null;
+    /**
+     * Desired Timeline
+     */
+    desired_timeline?: string | null;
+    /**
+     * Specialties
+     */
+    specialties?: Array<string>;
+    /**
+     * Is Remote
+     */
+    is_remote?: boolean;
+    /**
+     * Is Onsite
+     */
+    is_onsite?: boolean;
+    /**
+     * Is Urgent
+     */
+    is_urgent?: boolean;
+    /**
+     * Is After Hours
+     */
+    is_after_hours?: boolean;
+    /**
+     * Modifier Codes
+     */
+    modifier_codes?: Array<string>;
+    /**
+     * Privacy Requested
+     */
+    privacy_requested?: boolean;
+    /**
+     * Contact Name
+     */
+    contact_name?: string | null;
+    /**
+     * Company Name
+     */
+    company_name?: string | null;
+    /**
+     * Contact Email
+     */
+    contact_email?: string | null;
+    /**
+     * Contact Phone
+     */
+    contact_phone?: string | null;
+    /**
+     * Street Address
+     */
+    street_address?: string | null;
+    /**
+     * Website
+     */
+    website?: string | null;
+};
+
+/**
+ * ProjectOwnerView
+ */
+export type ProjectOwnerView = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Description
+     */
+    description: string;
+    /**
+     * Category
+     */
+    category: string;
+    /**
+     * Project Type
+     */
+    project_type: string;
+    /**
+     * Service Area
+     */
+    service_area: string;
+    /**
+     * Budget Min Cents
+     */
+    budget_min_cents: number | null;
+    /**
+     * Budget Max Cents
+     */
+    budget_max_cents: number | null;
+    /**
+     * Desired Timeline
+     */
+    desired_timeline: string | null;
+    /**
+     * Specialties
+     */
+    specialties: Array<string>;
+    /**
+     * Is Remote
+     */
+    is_remote: boolean;
+    /**
+     * Is Onsite
+     */
+    is_onsite: boolean;
+    /**
+     * Is Urgent
+     */
+    is_urgent: boolean;
+    /**
+     * Is After Hours
+     */
+    is_after_hours: boolean;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Unlocked
+     */
+    unlocked?: boolean;
+    /**
+     * Contact Name
+     */
+    contact_name?: string | null;
+    /**
+     * Company Name
+     */
+    company_name?: string | null;
+    /**
+     * Contact Email
+     */
+    contact_email?: string | null;
+    /**
+     * Contact Phone
+     */
+    contact_phone?: string | null;
+    /**
+     * Street Address
+     */
+    street_address?: string | null;
+    /**
+     * Website
+     */
+    website?: string | null;
+    /**
+     * Privacy Requested
+     */
+    privacy_requested: boolean;
+    /**
+     * Modifier Codes
+     */
+    modifier_codes: Array<string>;
+    /**
+     * Awarded Bid Id
+     */
+    awarded_bid_id: string | null;
+};
+
+/**
+ * ProjectPreview
+ *
+ * What a professional sees before a verified lead unlock.
+ */
+export type ProjectPreview = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Title
+     */
+    title: string;
+    /**
+     * Description
+     */
+    description: string;
+    /**
+     * Category
+     */
+    category: string;
+    /**
+     * Project Type
+     */
+    project_type: string;
+    /**
+     * Service Area
+     */
+    service_area: string;
+    /**
+     * Budget Min Cents
+     */
+    budget_min_cents: number | null;
+    /**
+     * Budget Max Cents
+     */
+    budget_max_cents: number | null;
+    /**
+     * Desired Timeline
+     */
+    desired_timeline: string | null;
+    /**
+     * Specialties
+     */
+    specialties: Array<string>;
+    /**
+     * Is Remote
+     */
+    is_remote: boolean;
+    /**
+     * Is Onsite
+     */
+    is_onsite: boolean;
+    /**
+     * Is Urgent
+     */
+    is_urgent: boolean;
+    /**
+     * Is After Hours
+     */
+    is_after_hours: boolean;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Unlocked
+     */
+    unlocked?: boolean;
+};
+
+/**
+ * Quote
+ */
+export type Quote = {
+    /**
+     * Lines
+     */
+    lines: Array<ModifierPublic>;
+    /**
+     * Discount Cents
+     */
+    discount_cents: number;
+    /**
+     * Total Cents
+     */
+    total_cents: number;
+};
+
+/**
+ * QuoteRequest
+ */
+export type QuoteRequest = {
+    /**
+     * Modifier Codes
+     */
+    modifier_codes?: Array<string>;
+};
+
+/**
+ * SellerStatus
+ */
+export type SellerStatus = {
+    /**
+     * Onboarding Complete
+     */
+    onboarding_complete: boolean;
+    /**
+     * Payments Receivable
+     */
+    payments_receivable: boolean;
+    /**
+     * Delayed Disbursement Enabled
+     */
+    delayed_disbursement_enabled: boolean;
+};
+
+/**
+ * SubscriptionPublic
+ */
+export type SubscriptionPublic = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Plan Code
+     */
+    plan_code: string;
+    /**
+     * Plan Name
+     */
+    plan_name: string;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Is Trial
+     */
+    is_trial: boolean;
+    /**
+     * Trial Start
+     */
+    trial_start?: unknown;
+    /**
+     * Trial End
+     */
+    trial_end?: unknown;
+    /**
+     * Renewal Date
+     */
+    renewal_date?: unknown;
+    /**
+     * Grants Benefits
+     */
+    grants_benefits: boolean;
+};
+
+/**
+ * Tier
+ */
+export type Tier = 'client' | 'professional' | 'pro_plus' | 'elite';
+
+/**
  * Token
  */
 export type Token = {
@@ -170,6 +1062,28 @@ export type Token = {
      * Token Type
      */
     token_type?: string;
+};
+
+/**
+ * UnlockResponse
+ */
+export type UnlockResponse = {
+    /**
+     * Unlock Id
+     */
+    unlock_id: string;
+    /**
+     * Fee Cents
+     */
+    fee_cents: number;
+    /**
+     * Paypal Order Id
+     */
+    paypal_order_id: string | null;
+    /**
+     * Status
+     */
+    status: string;
 };
 
 /**
@@ -340,6 +1254,48 @@ export type ValidationError = {
     ctx?: {
         [key: string]: unknown;
     };
+};
+
+/**
+ * WebhookEventPublic
+ */
+export type WebhookEventPublic = {
+    /**
+     * Id
+     */
+    id: string;
+    /**
+     * Paypal Event Id
+     */
+    paypal_event_id: string;
+    /**
+     * Event Type
+     */
+    event_type: string;
+    /**
+     * Environment
+     */
+    environment: string;
+    /**
+     * Status
+     */
+    status: string;
+    /**
+     * Attempts
+     */
+    attempts: number;
+    /**
+     * Error
+     */
+    error: string | null;
+    /**
+     * Received At
+     */
+    received_at: unknown;
+    /**
+     * Processed At
+     */
+    processed_at: unknown;
 };
 
 export type loginLoginAccessTokenData = {
@@ -920,6 +1876,1022 @@ export type itemsUpdateItemResponses = {
 };
 
 export type itemsUpdateItemResponse = itemsUpdateItemResponses[keyof itemsUpdateItemResponses];
+
+export type marketplaceBillingListPlansData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/plans';
+};
+
+export type marketplaceBillingListPlansResponses = {
+    /**
+     * Response Marketplace-Billing-List Plans
+     *
+     * Successful Response
+     */
+    200: Array<PlanPublic>;
+};
+
+export type marketplaceBillingListPlansResponse = marketplaceBillingListPlansResponses[keyof marketplaceBillingListPlansResponses];
+
+export type marketplaceBillingListModifiersData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/modifiers';
+};
+
+export type marketplaceBillingListModifiersResponses = {
+    /**
+     * Response Marketplace-Billing-List Modifiers
+     *
+     * Successful Response
+     */
+    200: Array<ModifierPublic>;
+};
+
+export type marketplaceBillingListModifiersResponse = marketplaceBillingListModifiersResponses[keyof marketplaceBillingListModifiersResponses];
+
+export type marketplaceBillingQuoteModifiersData = {
+    body: QuoteRequest;
+    path?: never;
+    query?: never;
+    url: '/api/v1/modifiers/quote';
+};
+
+export type marketplaceBillingQuoteModifiersErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceBillingQuoteModifiersError = marketplaceBillingQuoteModifiersErrors[keyof marketplaceBillingQuoteModifiersErrors];
+
+export type marketplaceBillingQuoteModifiersResponses = {
+    /**
+     * Successful Response
+     */
+    200: Quote;
+};
+
+export type marketplaceBillingQuoteModifiersResponse = marketplaceBillingQuoteModifiersResponses[keyof marketplaceBillingQuoteModifiersResponses];
+
+export type marketplaceBillingCreateProfileData = {
+    body: ProfileCreate;
+    path?: never;
+    query?: never;
+    url: '/api/v1/profile';
+};
+
+export type marketplaceBillingCreateProfileErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceBillingCreateProfileError = marketplaceBillingCreateProfileErrors[keyof marketplaceBillingCreateProfileErrors];
+
+export type marketplaceBillingCreateProfileResponses = {
+    /**
+     * Successful Response
+     */
+    200: ProfilePublic;
+};
+
+export type marketplaceBillingCreateProfileResponse = marketplaceBillingCreateProfileResponses[keyof marketplaceBillingCreateProfileResponses];
+
+export type marketplaceBillingReadMyProfileData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/profile/me';
+};
+
+export type marketplaceBillingReadMyProfileResponses = {
+    /**
+     * Successful Response
+     */
+    200: ProfilePublic;
+};
+
+export type marketplaceBillingReadMyProfileResponse = marketplaceBillingReadMyProfileResponses[keyof marketplaceBillingReadMyProfileResponses];
+
+export type marketplaceBillingStartSubscriptionData = {
+    body: CheckoutRequest;
+    path?: never;
+    query?: never;
+    url: '/api/v1/subscriptions/checkout';
+};
+
+export type marketplaceBillingStartSubscriptionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceBillingStartSubscriptionError = marketplaceBillingStartSubscriptionErrors[keyof marketplaceBillingStartSubscriptionErrors];
+
+export type marketplaceBillingStartSubscriptionResponses = {
+    /**
+     * Successful Response
+     */
+    200: CheckoutResponse;
+};
+
+export type marketplaceBillingStartSubscriptionResponse = marketplaceBillingStartSubscriptionResponses[keyof marketplaceBillingStartSubscriptionResponses];
+
+export type marketplaceBillingBillingSummaryData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/subscriptions/me';
+};
+
+export type marketplaceBillingBillingSummaryResponses = {
+    /**
+     * Successful Response
+     */
+    200: BillingSummary;
+};
+
+export type marketplaceBillingBillingSummaryResponse = marketplaceBillingBillingSummaryResponses[keyof marketplaceBillingBillingSummaryResponses];
+
+export type marketplaceBillingCancelSubscriptionData = {
+    body?: never;
+    path: {
+        /**
+         * Subscription Id
+         */
+        subscription_id: string;
+    };
+    query?: never;
+    url: '/api/v1/subscriptions/{subscription_id}/cancel';
+};
+
+export type marketplaceBillingCancelSubscriptionErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceBillingCancelSubscriptionError = marketplaceBillingCancelSubscriptionErrors[keyof marketplaceBillingCancelSubscriptionErrors];
+
+export type marketplaceBillingCancelSubscriptionResponses = {
+    /**
+     * Response Marketplace-Billing-Cancel Subscription
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type marketplaceProjectsBrowseProjectsData = {
+    body?: never;
+    path?: never;
+    query?: {
+        /**
+         * Category
+         */
+        category?: Category | null;
+        /**
+         * Service Area
+         */
+        service_area?: string | null;
+        /**
+         * Project Type
+         */
+        project_type?: string | null;
+        /**
+         * Skip
+         */
+        skip?: number;
+        /**
+         * Limit
+         */
+        limit?: number;
+    };
+    url: '/api/v1/projects/';
+};
+
+export type marketplaceProjectsBrowseProjectsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsBrowseProjectsError = marketplaceProjectsBrowseProjectsErrors[keyof marketplaceProjectsBrowseProjectsErrors];
+
+export type marketplaceProjectsBrowseProjectsResponses = {
+    /**
+     * Response Marketplace-Projects-Browse Projects
+     *
+     * Successful Response
+     */
+    200: Array<ProjectPreview>;
+};
+
+export type marketplaceProjectsBrowseProjectsResponse = marketplaceProjectsBrowseProjectsResponses[keyof marketplaceProjectsBrowseProjectsResponses];
+
+export type marketplaceProjectsCreateProjectData = {
+    body: ProjectCreate;
+    path?: never;
+    query?: never;
+    url: '/api/v1/projects/';
+};
+
+export type marketplaceProjectsCreateProjectErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsCreateProjectError = marketplaceProjectsCreateProjectErrors[keyof marketplaceProjectsCreateProjectErrors];
+
+export type marketplaceProjectsCreateProjectResponses = {
+    /**
+     * Successful Response
+     */
+    200: ProjectOwnerView;
+};
+
+export type marketplaceProjectsCreateProjectResponse = marketplaceProjectsCreateProjectResponses[keyof marketplaceProjectsCreateProjectResponses];
+
+export type marketplaceProjectsMyProjectsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/projects/mine';
+};
+
+export type marketplaceProjectsMyProjectsResponses = {
+    /**
+     * Response Marketplace-Projects-My Projects
+     *
+     * Successful Response
+     */
+    200: Array<ProjectOwnerView>;
+};
+
+export type marketplaceProjectsMyProjectsResponse = marketplaceProjectsMyProjectsResponses[keyof marketplaceProjectsMyProjectsResponses];
+
+export type marketplaceProjectsReadProjectData = {
+    body?: never;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}';
+};
+
+export type marketplaceProjectsReadProjectErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsReadProjectError = marketplaceProjectsReadProjectErrors[keyof marketplaceProjectsReadProjectErrors];
+
+export type marketplaceProjectsReadProjectResponses = {
+    /**
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type marketplaceProjectsListBidsData = {
+    body?: never;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/bids';
+};
+
+export type marketplaceProjectsListBidsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsListBidsError = marketplaceProjectsListBidsErrors[keyof marketplaceProjectsListBidsErrors];
+
+export type marketplaceProjectsListBidsResponses = {
+    /**
+     * Response Marketplace-Projects-List Bids
+     *
+     * Successful Response
+     */
+    200: Array<BidPublic>;
+};
+
+export type marketplaceProjectsListBidsResponse = marketplaceProjectsListBidsResponses[keyof marketplaceProjectsListBidsResponses];
+
+export type marketplaceProjectsSubmitBidData = {
+    body: BidWrite;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/bids';
+};
+
+export type marketplaceProjectsSubmitBidErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsSubmitBidError = marketplaceProjectsSubmitBidErrors[keyof marketplaceProjectsSubmitBidErrors];
+
+export type marketplaceProjectsSubmitBidResponses = {
+    /**
+     * Successful Response
+     */
+    200: BidPublic;
+};
+
+export type marketplaceProjectsSubmitBidResponse = marketplaceProjectsSubmitBidResponses[keyof marketplaceProjectsSubmitBidResponses];
+
+export type marketplaceProjectsShortlistBidData = {
+    body?: never;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+        /**
+         * Bid Id
+         */
+        bid_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/bids/{bid_id}/shortlist';
+};
+
+export type marketplaceProjectsShortlistBidErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsShortlistBidError = marketplaceProjectsShortlistBidErrors[keyof marketplaceProjectsShortlistBidErrors];
+
+export type marketplaceProjectsShortlistBidResponses = {
+    /**
+     * Successful Response
+     */
+    200: BidPublic;
+};
+
+export type marketplaceProjectsShortlistBidResponse = marketplaceProjectsShortlistBidResponses[keyof marketplaceProjectsShortlistBidResponses];
+
+export type marketplaceProjectsAwardProjectData = {
+    body?: never;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+        /**
+         * Bid Id
+         */
+        bid_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/award/{bid_id}';
+};
+
+export type marketplaceProjectsAwardProjectErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsAwardProjectError = marketplaceProjectsAwardProjectErrors[keyof marketplaceProjectsAwardProjectErrors];
+
+export type marketplaceProjectsAwardProjectResponses = {
+    /**
+     * Successful Response
+     */
+    200: ProjectOwnerView;
+};
+
+export type marketplaceProjectsAwardProjectResponse = marketplaceProjectsAwardProjectResponses[keyof marketplaceProjectsAwardProjectResponses];
+
+export type marketplaceProjectsLeadUnlockStatusData = {
+    body?: never;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/unlock';
+};
+
+export type marketplaceProjectsLeadUnlockStatusErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsLeadUnlockStatusError = marketplaceProjectsLeadUnlockStatusErrors[keyof marketplaceProjectsLeadUnlockStatusErrors];
+
+export type marketplaceProjectsLeadUnlockStatusResponses = {
+    /**
+     * Successful Response
+     */
+    200: UnlockResponse;
+};
+
+export type marketplaceProjectsLeadUnlockStatusResponse = marketplaceProjectsLeadUnlockStatusResponses[keyof marketplaceProjectsLeadUnlockStatusResponses];
+
+export type marketplaceProjectsStartLeadUnlockData = {
+    body?: never;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/unlock';
+};
+
+export type marketplaceProjectsStartLeadUnlockErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceProjectsStartLeadUnlockError = marketplaceProjectsStartLeadUnlockErrors[keyof marketplaceProjectsStartLeadUnlockErrors];
+
+export type marketplaceProjectsStartLeadUnlockResponses = {
+    /**
+     * Successful Response
+     */
+    200: UnlockResponse;
+};
+
+export type marketplaceProjectsStartLeadUnlockResponse = marketplaceProjectsStartLeadUnlockResponses[keyof marketplaceProjectsStartLeadUnlockResponses];
+
+export type marketplacePaymentsCreateMilestoneData = {
+    body: MilestoneCreate;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/milestones';
+};
+
+export type marketplacePaymentsCreateMilestoneErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplacePaymentsCreateMilestoneError = marketplacePaymentsCreateMilestoneErrors[keyof marketplacePaymentsCreateMilestoneErrors];
+
+export type marketplacePaymentsCreateMilestoneResponses = {
+    /**
+     * Successful Response
+     */
+    200: MilestonePublic;
+};
+
+export type marketplacePaymentsCreateMilestoneResponse = marketplacePaymentsCreateMilestoneResponses[keyof marketplacePaymentsCreateMilestoneResponses];
+
+export type marketplacePaymentsFundData = {
+    body: FundRequest;
+    path: {
+        /**
+         * Milestone Id
+         */
+        milestone_id: string;
+    };
+    query?: never;
+    url: '/api/v1/milestones/{milestone_id}/fund';
+};
+
+export type marketplacePaymentsFundErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplacePaymentsFundError = marketplacePaymentsFundErrors[keyof marketplacePaymentsFundErrors];
+
+export type marketplacePaymentsFundResponses = {
+    /**
+     * Successful Response
+     */
+    200: FundResponse;
+};
+
+export type marketplacePaymentsFundResponse = marketplacePaymentsFundResponses[keyof marketplacePaymentsFundResponses];
+
+export type marketplacePaymentsApproveData = {
+    body?: never;
+    path: {
+        /**
+         * Milestone Id
+         */
+        milestone_id: string;
+    };
+    query?: never;
+    url: '/api/v1/milestones/{milestone_id}/approve';
+};
+
+export type marketplacePaymentsApproveErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplacePaymentsApproveError = marketplacePaymentsApproveErrors[keyof marketplacePaymentsApproveErrors];
+
+export type marketplacePaymentsApproveResponses = {
+    /**
+     * Successful Response
+     */
+    200: MilestonePublic;
+};
+
+export type marketplacePaymentsApproveResponse = marketplacePaymentsApproveResponses[keyof marketplacePaymentsApproveResponses];
+
+export type marketplacePaymentsSellerStatusData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/seller/status';
+};
+
+export type marketplacePaymentsSellerStatusResponses = {
+    /**
+     * Successful Response
+     */
+    200: SellerStatus;
+};
+
+export type marketplacePaymentsSellerStatusResponse = marketplacePaymentsSellerStatusResponses[keyof marketplacePaymentsSellerStatusResponses];
+
+export type marketplacePaymentsSellerOnboardData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/seller/onboard';
+};
+
+export type marketplacePaymentsSellerOnboardErrors = {
+    /**
+     * Response Marketplace-Payments-Seller Onboard
+     *
+     * Successful Response
+     */
+    501: unknown;
+};
+
+export type marketplacePaymentsProjectPaymentsData = {
+    body?: never;
+    path: {
+        /**
+         * Project Id
+         */
+        project_id: string;
+    };
+    query?: never;
+    url: '/api/v1/projects/{project_id}/payments';
+};
+
+export type marketplacePaymentsProjectPaymentsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplacePaymentsProjectPaymentsError = marketplacePaymentsProjectPaymentsErrors[keyof marketplacePaymentsProjectPaymentsErrors];
+
+export type marketplacePaymentsProjectPaymentsResponses = {
+    /**
+     * Response Marketplace-Payments-Project Payments
+     *
+     * Successful Response
+     */
+    200: Array<PaymentPublic>;
+};
+
+export type marketplacePaymentsProjectPaymentsResponse = marketplacePaymentsProjectPaymentsResponses[keyof marketplacePaymentsProjectPaymentsResponses];
+
+export type marketplaceAdminWebhookEventsData = {
+    body?: never;
+    path?: never;
+    query?: {
+        /**
+         * Status
+         */
+        status?: string | null;
+        /**
+         * Skip
+         */
+        skip?: number;
+        /**
+         * Limit
+         */
+        limit?: number;
+    };
+    url: '/api/v1/admin/webhook-events';
+};
+
+export type marketplaceAdminWebhookEventsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminWebhookEventsError = marketplaceAdminWebhookEventsErrors[keyof marketplaceAdminWebhookEventsErrors];
+
+export type marketplaceAdminWebhookEventsResponses = {
+    /**
+     * Response Marketplace-Admin-Webhook Events
+     *
+     * Successful Response
+     */
+    200: Array<WebhookEventPublic>;
+};
+
+export type marketplaceAdminWebhookEventsResponse = marketplaceAdminWebhookEventsResponses[keyof marketplaceAdminWebhookEventsResponses];
+
+export type marketplaceAdminReprocessEventData = {
+    body?: never;
+    path: {
+        /**
+         * Event Id
+         */
+        event_id: string;
+    };
+    query?: never;
+    url: '/api/v1/admin/webhook-events/{event_id}/reprocess';
+};
+
+export type marketplaceAdminReprocessEventErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminReprocessEventError = marketplaceAdminReprocessEventErrors[keyof marketplaceAdminReprocessEventErrors];
+
+export type marketplaceAdminReprocessEventResponses = {
+    /**
+     * Response Marketplace-Admin-Reprocess Event
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type marketplaceAdminReleaseQueueData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/admin/payments/release-queue';
+};
+
+export type marketplaceAdminReleaseQueueResponses = {
+    /**
+     * Response Marketplace-Admin-Release Queue
+     *
+     * Successful Response
+     */
+    200: Array<PaymentAdmin>;
+};
+
+export type marketplaceAdminReleaseQueueResponse = marketplaceAdminReleaseQueueResponses[keyof marketplaceAdminReleaseQueueResponses];
+
+export type marketplaceAdminAllPaymentsData = {
+    body?: never;
+    path?: never;
+    query?: {
+        /**
+         * Status
+         */
+        status?: string | null;
+        /**
+         * Limit
+         */
+        limit?: number;
+    };
+    url: '/api/v1/admin/payments';
+};
+
+export type marketplaceAdminAllPaymentsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminAllPaymentsError = marketplaceAdminAllPaymentsErrors[keyof marketplaceAdminAllPaymentsErrors];
+
+export type marketplaceAdminAllPaymentsResponses = {
+    /**
+     * Response Marketplace-Admin-All Payments
+     *
+     * Successful Response
+     */
+    200: Array<PaymentAdmin>;
+};
+
+export type marketplaceAdminAllPaymentsResponse = marketplaceAdminAllPaymentsResponses[keyof marketplaceAdminAllPaymentsResponses];
+
+export type marketplaceAdminRefundPaymentData = {
+    body?: never;
+    path: {
+        /**
+         * Payment Id
+         */
+        payment_id: string;
+    };
+    query?: never;
+    url: '/api/v1/admin/payments/{payment_id}/refund';
+};
+
+export type marketplaceAdminRefundPaymentErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminRefundPaymentError = marketplaceAdminRefundPaymentErrors[keyof marketplaceAdminRefundPaymentErrors];
+
+export type marketplaceAdminRefundPaymentResponses = {
+    /**
+     * Response Marketplace-Admin-Refund Payment
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type marketplaceAdminFeatureFlagsData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/admin/feature-flags';
+};
+
+export type marketplaceAdminFeatureFlagsResponses = {
+    /**
+     * Response Marketplace-Admin-Feature Flags
+     *
+     * Successful Response
+     */
+    200: Array<FlagPublic>;
+};
+
+export type marketplaceAdminFeatureFlagsResponse = marketplaceAdminFeatureFlagsResponses[keyof marketplaceAdminFeatureFlagsResponses];
+
+export type marketplaceAdminSetFeatureFlagData = {
+    body: FlagUpdate;
+    path: {
+        /**
+         * Key
+         */
+        key: string;
+    };
+    query?: never;
+    url: '/api/v1/admin/feature-flags/{key}';
+};
+
+export type marketplaceAdminSetFeatureFlagErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminSetFeatureFlagError = marketplaceAdminSetFeatureFlagErrors[keyof marketplaceAdminSetFeatureFlagErrors];
+
+export type marketplaceAdminSetFeatureFlagResponses = {
+    /**
+     * Successful Response
+     */
+    200: FlagPublic;
+};
+
+export type marketplaceAdminSetFeatureFlagResponse = marketplaceAdminSetFeatureFlagResponses[keyof marketplaceAdminSetFeatureFlagResponses];
+
+export type marketplaceAdminUpdatePlanData = {
+    body: PlanUpdate;
+    path: {
+        /**
+         * Code
+         */
+        code: string;
+    };
+    query?: never;
+    url: '/api/v1/admin/plans/{code}';
+};
+
+export type marketplaceAdminUpdatePlanErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminUpdatePlanError = marketplaceAdminUpdatePlanErrors[keyof marketplaceAdminUpdatePlanErrors];
+
+export type marketplaceAdminUpdatePlanResponses = {
+    /**
+     * Response Marketplace-Admin-Update Plan
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type marketplaceAdminCreatePlanData = {
+    body: PlanCreate;
+    path?: never;
+    query?: never;
+    url: '/api/v1/admin/plans';
+};
+
+export type marketplaceAdminCreatePlanErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminCreatePlanError = marketplaceAdminCreatePlanErrors[keyof marketplaceAdminCreatePlanErrors];
+
+export type marketplaceAdminCreatePlanResponses = {
+    /**
+     * Response Marketplace-Admin-Create Plan
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type marketplaceAdminUpdateModifierData = {
+    body: ModifierUpdate;
+    path: {
+        /**
+         * Code
+         */
+        code: string;
+    };
+    query?: never;
+    url: '/api/v1/admin/modifiers/{code}';
+};
+
+export type marketplaceAdminUpdateModifierErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminUpdateModifierError = marketplaceAdminUpdateModifierErrors[keyof marketplaceAdminUpdateModifierErrors];
+
+export type marketplaceAdminUpdateModifierResponses = {
+    /**
+     * Successful Response
+     */
+    200: ModifierAdmin;
+};
+
+export type marketplaceAdminUpdateModifierResponse = marketplaceAdminUpdateModifierResponses[keyof marketplaceAdminUpdateModifierResponses];
+
+export type marketplaceAdminSetMarketplaceFeeData = {
+    body: FeeUpdate;
+    path?: never;
+    query?: never;
+    url: '/api/v1/admin/settings/marketplace-fee';
+};
+
+export type marketplaceAdminSetMarketplaceFeeErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminSetMarketplaceFeeError = marketplaceAdminSetMarketplaceFeeErrors[keyof marketplaceAdminSetMarketplaceFeeErrors];
+
+export type marketplaceAdminSetMarketplaceFeeResponses = {
+    /**
+     * Response Marketplace-Admin-Set Marketplace Fee
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type marketplaceAdminAuditLogsData = {
+    body?: never;
+    path?: never;
+    query?: {
+        /**
+         * Action
+         */
+        action?: string | null;
+        /**
+         * Limit
+         */
+        limit?: number;
+    };
+    url: '/api/v1/admin/audit-logs';
+};
+
+export type marketplaceAdminAuditLogsErrors = {
+    /**
+     * Validation Error
+     */
+    422: HTTPValidationError;
+};
+
+export type marketplaceAdminAuditLogsError = marketplaceAdminAuditLogsErrors[keyof marketplaceAdminAuditLogsErrors];
+
+export type marketplaceAdminAuditLogsResponses = {
+    /**
+     * Response Marketplace-Admin-Audit Logs
+     *
+     * Successful Response
+     */
+    200: Array<AuditLogPublic>;
+};
+
+export type marketplaceAdminAuditLogsResponse = marketplaceAdminAuditLogsResponses[keyof marketplaceAdminAuditLogsResponses];
+
+export type marketplaceAdminRemoteSupportConfigData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/admin/remote-support';
+};
+
+export type marketplaceAdminRemoteSupportConfigResponses = {
+    /**
+     * Response Marketplace-Admin-Remote Support Config
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
+
+export type webhooksPaypalWebhookData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/api/v1/webhooks/paypal';
+};
+
+export type webhooksPaypalWebhookResponses = {
+    /**
+     * Response Webhooks-Paypal Webhook
+     *
+     * Successful Response
+     */
+    200: unknown;
+};
 
 export type privateCreateUserData = {
     body: PrivateUserCreate;
